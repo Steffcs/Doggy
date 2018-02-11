@@ -14,6 +14,7 @@ public class BreedImageContract {
         void showImage(List<String> breed);
         void showProgress(boolean show);
         void showError(boolean show);
+        void initToolbar(String breed);
     }
 
 
@@ -21,6 +22,7 @@ public class BreedImageContract {
     public interface Presenter extends BaseViewPresenter<BreedImageContract.View> {
         void initialize(BreedImageContract.View view);
         void getImages(String name);
+        void cancelObservable();
 
 
 

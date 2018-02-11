@@ -55,6 +55,7 @@ public class BreedImageFragment extends BaseFragment<FragmentPuppiesImageBinding
 
     @Override
     protected void injectDependencies() {
+
         DaggerPuppiesImageComponent.builder().build().inject(this);
 
     }
@@ -68,6 +69,18 @@ public class BreedImageFragment extends BaseFragment<FragmentPuppiesImageBinding
     @Override
     public void showError(boolean show) {
         binder.errorView.setVisibility(show? View.VISIBLE:View.GONE);
+    }
+
+    @Override
+    public void initToolbar(String breed) {
+       binder.includedToolbar.ivBack.setVisibility(View.VISIBLE);
+       binder.includedToolbar.tvName.setText(breed);
+       binder.includedToolbar.ivBack.setOnClickListener(view -> {
+           popBackStack();
+
+       });
+
+
     }
 
     @Override
@@ -89,5 +102,11 @@ public class BreedImageFragment extends BaseFragment<FragmentPuppiesImageBinding
 
 
 
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        presenter.cancelObservable();
     }
 }

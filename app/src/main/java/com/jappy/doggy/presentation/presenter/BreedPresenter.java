@@ -38,9 +38,15 @@ public class BreedPresenter implements BreedContract.Presenter {
     public void initialize(BreedContract.View view) {
         Log.e(" ininin", "iniwer");
         this.view = view;
+        view.initToolbar("Doggy");
         view.showProgress(true);
         requestPuppies();
 
+    }
+
+    @Override
+    public void cancelObservable() {
+        getPuppiesUseCase.dispose();
     }
 
 

@@ -35,6 +35,7 @@ public class BreedImagePresenter implements BreedImageContract.Presenter{
     @Override
     public void getImages(String name) {
         view.showProgress(true);
+        view.initToolbar(name);
         getPuppiesImageUseCase.setData(name).execute(new UseCaseObserver<PuppiesImage>() {
             @Override
             public void onNext(PuppiesImage img) {
@@ -69,8 +70,11 @@ public class BreedImagePresenter implements BreedImageContract.Presenter{
         });
     }
 
+    @Override
+    public void cancelObservable() {
+        getPuppiesImageUseCase.dispose();
 
-
+    }
 
 
 }

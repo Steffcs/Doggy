@@ -46,12 +46,7 @@ public class BreedFragment extends BaseStackFragment<FragmentBreedBinding> imple
 
     @Override
     protected void injectDependencies() {
-       // DaggerEarthquakeComponent.builder().build().inject(this);
         DaggerDogComponent.builder().build().inject(this);
-
-
-
-
 
     }
 
@@ -69,6 +64,14 @@ public class BreedFragment extends BaseStackFragment<FragmentBreedBinding> imple
 
     @Override
     public void showMessage(String message) {
+
+    }
+
+    @Override
+    public void initToolbar(String breed) {
+       binder.includedToolbar.ivBack.setVisibility(View.GONE);
+       binder.includedToolbar.tvName.setText(breed);
+
 
     }
 
@@ -106,5 +109,12 @@ public class BreedFragment extends BaseStackFragment<FragmentBreedBinding> imple
     @Override
     protected int getNavigationContainer() {
         return R.id.stackContainer;
+    }
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        presenter.cancelObservable();
     }
 }

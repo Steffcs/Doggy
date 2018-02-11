@@ -17,11 +17,13 @@ public class BreedContract {
         void showdog(List<String> breed);
         void showProgress(boolean show);
         void showError(boolean show);
+        void initToolbar(String breed);
 
 
     }
     public interface Presenter extends BaseViewPresenter<View> {
         void initialize(View view);
+        void cancelObservable();
 
 
 
