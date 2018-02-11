@@ -4,7 +4,7 @@ import android.util.Log;
 
 import com.jappy.doggy.data.remote.DoggyApi;
 import com.jappy.doggy.domain.model.Breed;
-import com.jappy.doggy.domain.usecase.GetPuppiesUseCase;
+import com.jappy.doggy.domain.usecase.GetBreedUseCase;
 import com.jappy.doggy.presentation.contract.BreedContract;
 import com.jappy.jappy_core.domian.usecase.UseCaseObserver;
 
@@ -20,7 +20,7 @@ import javax.inject.Inject;
  */
 
 public class BreedPresenter implements BreedContract.Presenter {
-    GetPuppiesUseCase getPuppiesUseCase;
+    GetBreedUseCase getPuppiesUseCase;
     BreedContract.View view;
     DoggyApi apiService;
     List<String> breed = new ArrayList<>();
@@ -28,7 +28,7 @@ public class BreedPresenter implements BreedContract.Presenter {
 
 
     @Inject
-    public BreedPresenter(GetPuppiesUseCase getPuppiesUseCase) {
+    public BreedPresenter(GetBreedUseCase getPuppiesUseCase) {
         this.getPuppiesUseCase = getPuppiesUseCase;
 
 

@@ -12,7 +12,7 @@ import android.view.View;
 
 import com.jappy.doggy.R;
 import com.jappy.doggy.databinding.FragmentBreedBinding;
-import com.jappy.doggy.di.DaggerDogComponent;
+import com.jappy.doggy.di.DaggerBreedComponent;
 import com.jappy.doggy.presentation.adapter.BreedAdapter;
 import com.jappy.doggy.presentation.contract.BreedContract;
 import com.jappy.jappy_core.presentation.BaseStackFragment;
@@ -46,7 +46,9 @@ public class BreedFragment extends BaseStackFragment<FragmentBreedBinding> imple
 
     @Override
     protected void injectDependencies() {
-        DaggerDogComponent.builder().build().inject(this);
+        DaggerBreedComponent.builder().build().inject(this);
+
+
 
     }
 

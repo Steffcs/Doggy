@@ -1,7 +1,7 @@
 package com.jappy.doggy.data.repository.mappers;
 
 import com.jappy.doggy.data.remote.response.BreedImageResponse;
-import com.jappy.doggy.domain.model.PuppiesImage;
+import com.jappy.doggy.domain.model.BreedImage;
 import com.jappy.jappy_core.data.repository.Mapper;
 
 import javax.inject.Inject;
@@ -10,7 +10,7 @@ import javax.inject.Inject;
  * Created by irenecedeno on 10-02-18.
  */
 
-public class PuppiesToDomainMappe extends Mapper<BreedImageResponse, PuppiesImage> {
+public class PuppiesToDomainMappe extends Mapper<BreedImageResponse, BreedImage> {
 
 
     @Inject
@@ -21,8 +21,8 @@ public class PuppiesToDomainMappe extends Mapper<BreedImageResponse, PuppiesImag
 
 
     @Override
-    public PuppiesImage map(BreedImageResponse value) {
-        PuppiesImage puppiesImage = new PuppiesImage();
+    public BreedImage map(BreedImageResponse value) {
+        BreedImage puppiesImage = new BreedImage();
         puppiesImage.status = value.status;
         puppiesImage.message = value.message;
 
@@ -31,7 +31,7 @@ public class PuppiesToDomainMappe extends Mapper<BreedImageResponse, PuppiesImag
     }
 
     @Override
-    public BreedImageResponse reverseMap(PuppiesImage value) {
+    public BreedImageResponse reverseMap(BreedImage value) {
         throw new UnsupportedOperationException();
     }
 }

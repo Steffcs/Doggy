@@ -5,7 +5,7 @@ import com.jappy.doggy.data.remote.DoggyApi;
 import com.jappy.doggy.data.repository.BreedRepository;
 import com.jappy.doggy.data.repository.BreedRepositoryImp;
 import com.jappy.doggy.data.repository.mappers.BreedToDomainMapper;
-import com.jappy.doggy.domain.usecase.GetPuppiesUseCase;
+import com.jappy.doggy.domain.usecase.GetBreedUseCase;
 import com.jappy.doggy.presentation.contract.BreedContract;
 import com.jappy.doggy.presentation.adapter.BreedAdapter;
 import com.jappy.doggy.presentation.presenter.BreedPresenter;
@@ -20,7 +20,7 @@ import okhttp3.OkHttpClient;
  * Created by irenecedeno on 09-02-18.
  */
 @Module
-public class DogModule {
+public class BreedModule {
 
     BreedToDomainMapper breedToDomainMapper;
 
@@ -37,7 +37,7 @@ public class DogModule {
 
 
     @Provides
-    BreedContract.Presenter providePresenter(GetPuppiesUseCase getPuppiesUseCase) {
+    BreedContract.Presenter providePresenter(GetBreedUseCase getPuppiesUseCase) {
         return new BreedPresenter(getPuppiesUseCase);
 
 

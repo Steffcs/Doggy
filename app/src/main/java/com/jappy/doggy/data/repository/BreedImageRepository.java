@@ -1,7 +1,7 @@
 package com.jappy.doggy.data.repository;
 
 import com.jappy.doggy.domain.model.Breed;
-import com.jappy.doggy.domain.model.PuppiesImage;
+import com.jappy.doggy.domain.model.BreedImage;
 
 import java.util.List;
 
@@ -12,6 +12,6 @@ import io.reactivex.Observable;
  */
 
 public interface BreedImageRepository {
-    Observable<PuppiesImage> getPuppiesImage(String name );
+    Observable<BreedImage> getPuppiesImage(String name );
 
 }

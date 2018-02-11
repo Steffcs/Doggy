@@ -9,7 +9,7 @@ import java.util.List;
  * Created by irenecedeno on 09-02-18.
  */
 
-public class PuppiesImageEntity {
+public class BreedImageEntity {
     @SerializedName("status")
     @Expose
     private String status ;

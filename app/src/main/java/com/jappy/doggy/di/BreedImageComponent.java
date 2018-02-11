@@ -11,4 +11,4 @@ import dagger.Component;
  */
 @Singleton
 @Component(modules = {PuppiesImageModule.class})
-public interface PuppiesImageComponent extends  FragmentComponent<BreedImageFragment> {}
+public interface BreedImageComponent extends  FragmentComponent<BreedImageFragment> {}

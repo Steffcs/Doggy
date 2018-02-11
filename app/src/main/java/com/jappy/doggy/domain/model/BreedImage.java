@@ -10,7 +10,7 @@ import java.util.List;
  * Created by irenecedeno on 09-02-18.
  */
 
-public class PuppiesImage {
+public class BreedImage {
 
     public String status;
     public ArrayList<String> message;

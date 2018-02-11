@@ -14,17 +14,17 @@ import io.reactivex.Observable;
  * Created by irenecedeno on 09-02-18.
  */
 
-public class GetPuppiesUseCase extends UseCase<Breed> {
+public class GetBreedUseCase extends UseCase<Breed> {
 
     private final BreedRepository breedRepository;
     private String data;
 
     @Inject
-    public GetPuppiesUseCase(BreedRepository breedRepository) {
+    public GetBreedUseCase(BreedRepository breedRepository) {
         this.breedRepository=breedRepository;
     }
 
-    public GetPuppiesUseCase setData(String data) {
+    public GetBreedUseCase setData(String data) {
         this.data = data;
 
         return this;

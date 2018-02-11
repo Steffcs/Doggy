@@ -3,7 +3,7 @@ package com.jappy.doggy.data.repository;
 import com.jappy.doggy.data.remote.DoggyApi;
 import com.jappy.doggy.data.remote.response.BreedImageResponse;
 import com.jappy.doggy.data.repository.mappers.PuppiesToDomainMappe;
-import com.jappy.doggy.domain.model.PuppiesImage;
+import com.jappy.doggy.domain.model.BreedImage;
 
 import javax.inject.Inject;
 
@@ -27,13 +27,13 @@ public class BreedImageRepositoryImp implements BreedImageRepository {
 
     }
     @Override
-    public Observable<PuppiesImage> getPuppiesImage(String name) {
+    public Observable<BreedImage> getPuppiesImage(String name) {
 
 
 
-        return apiService.getPuppiesImages(name).map(new Function<BreedImageResponse, PuppiesImage>() {
+        return apiService.getPuppiesImages(name).map(new Function<BreedImageResponse, BreedImage>() {
             @Override
-            public PuppiesImage apply(BreedImageResponse puppiesResponse) throws Exception {
+            public BreedImage apply(BreedImageResponse puppiesResponse) throws Exception {
                 return puppiesToDomainMappe.map(puppiesResponse);
             }
         });

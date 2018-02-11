@@ -5,7 +5,7 @@ import com.jappy.doggy.data.remote.DoggyApi;
 import com.jappy.doggy.data.repository.BreedImageRepositoryImp;
 import com.jappy.doggy.data.repository.BreedImageRepository;
 import com.jappy.doggy.data.repository.mappers.PuppiesToDomainMappe;
-import com.jappy.doggy.domain.usecase.GetPuppiesImageUseCase;
+import com.jappy.doggy.domain.usecase.GetBreedImageUseCase;
 import com.jappy.doggy.presentation.adapter.ImageCardAdapter;
 import com.jappy.doggy.presentation.contract.BreedImageContract;
 import com.jappy.doggy.presentation.presenter.BreedImagePresenter;
@@ -36,7 +36,7 @@ public class PuppiesImageModule {
     }
 
     @Provides
-    BreedImageContract.Presenter providePresenter(GetPuppiesImageUseCase puppiesToDomainMappe) {
+    BreedImageContract.Presenter providePresenter(GetBreedImageUseCase puppiesToDomainMappe) {
         return new BreedImagePresenter(puppiesToDomainMappe);
 
 

@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.jappy.doggy.R;
 import com.jappy.doggy.databinding.FragmentPuppiesImageBinding;
-import com.jappy.doggy.di.DaggerPuppiesImageComponent;
+import com.jappy.doggy.di.DaggerBreedImageComponent;
 import com.jappy.doggy.presentation.adapter.ImageCardAdapter;
 import com.jappy.doggy.presentation.contract.BreedImageContract;
 import com.jappy.jappy_core.presentation.BaseFragment;
@@ -55,8 +55,9 @@ public class BreedImageFragment extends BaseFragment<FragmentPuppiesImageBinding
 
     @Override
     protected void injectDependencies() {
+        DaggerBreedImageComponent.builder().build().inject(this);
 
-        DaggerPuppiesImageComponent.builder().build().inject(this);
+      
 
     }
 

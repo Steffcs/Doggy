@@ -2,8 +2,8 @@ package com.jappy.doggy.presentation.presenter;
 
 import android.util.Log;
 
-import com.jappy.doggy.domain.model.PuppiesImage;
-import com.jappy.doggy.domain.usecase.GetPuppiesImageUseCase;
+import com.jappy.doggy.domain.model.BreedImage;
+import com.jappy.doggy.domain.usecase.GetBreedImageUseCase;
 import com.jappy.doggy.presentation.contract.BreedImageContract;
 import com.jappy.jappy_core.domian.usecase.UseCaseObserver;
 
@@ -14,11 +14,11 @@ import javax.inject.Inject;
  */
 
 public class BreedImagePresenter implements BreedImageContract.Presenter{
-    GetPuppiesImageUseCase getPuppiesImageUseCase;
+    GetBreedImageUseCase getPuppiesImageUseCase;
     BreedImageContract.View view;
 
     @Inject
-    public BreedImagePresenter(GetPuppiesImageUseCase getPuppiesImageUseCase) {
+    public BreedImagePresenter(GetBreedImageUseCase getPuppiesImageUseCase) {
 
         this.getPuppiesImageUseCase = getPuppiesImageUseCase;
 
@@ -36,9 +36,9 @@ public class BreedImagePresenter implements BreedImageContract.Presenter{
     public void getImages(String name) {
         view.showProgress(true);
         view.initToolbar(name);
-        getPuppiesImageUseCase.setData(name).execute(new UseCaseObserver<PuppiesImage>() {
+        getPuppiesImageUseCase.setData(name).execute(new UseCaseObserver<BreedImage>() {
             @Override
-            public void onNext(PuppiesImage img) {
+            public void onNext(BreedImage img) {
 
                 Log.e("ininin image", img.message.get(0));
                 view.showImage(img.message);

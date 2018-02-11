@@ -11,7 +11,7 @@ import com.jappy.doggy.R;
 import com.jappy.doggy.databinding.ItemBreedBinding;
 import com.jappy.doggy.domain.model.Breed;
 import com.jappy.doggy.domain.model.Dog;
-import com.jappy.doggy.domain.model.PuppiesImage;
+import com.jappy.doggy.domain.model.BreedImage;
 import com.jappy.jappy_core.presentation.OnItemClickListener;
 import com.jappy.jappy_core.presentation.adapter.BaseListAdapter;
 import com.jappy.jappy_core.presentation.adapter.BaseViewHolder;
