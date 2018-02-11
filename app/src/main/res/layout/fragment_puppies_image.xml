@@ -1,0 +1,58 @@
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:clickable="true"
+    tools:context="com.jappy.doggy.presentation.BreedImageFragment">
+
+
+    <ImageView android:id="@+id/pager_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+
+    <com.jappy.jappy_core.presentation.view.FlingRecycleView
+        android:id="@+id/pager_recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.jappy.jappy_core.presentation.view.FlingRecycleView>
+
+
+    <com.jappy.jappy_core.presentation.view.DefaultLoadingView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:visibility="gone"
+        android:id="@+id/progressView"
+
+        />
+
+
+    <com.jappy.jappy_core.presentation.view.ServerErrorView
+        android:id="@+id/errorView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:visibility="gone"
+
+        />
+
+
+
+
+
+
+
+
+
+
+
+</FrameLayout>
+</layout>
